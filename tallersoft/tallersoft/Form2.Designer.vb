@@ -22,19 +22,8 @@ Partial Class Form2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
-        Me.SuspendLayout()
-        '
-        'Form2
-        '
-        resources.ApplyResources(Me, "$this")
+        components = New System.ComponentModel.Container
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Name = "Form2"
-        Me.Opacity = 0.6R
-        Me.TransparencyKey = System.Drawing.Color.Aqua
-        Me.ResumeLayout(False)
-
+        Me.Text = "Form2"
     End Sub
 End Class
