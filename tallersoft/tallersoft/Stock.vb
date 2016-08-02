@@ -160,77 +160,107 @@
             Me.StockTableAdapter.Fill(Me.DataSet1.stock)
             '''
 
+
+            '''ESTA ES LA PARTE DE ACTUALIZAR EN CASO DE QUE YA EXISTA Y HAYA ALGUN CAMBIO EN LOS CAMPOS DE STOCK
             cantidad_stock = DataSet1.Tables("stock").Rows.Count
 
-            ''' ESTA ES LA PARTE PARA METER EN 'INGRESO'
-            Dim bandera_encontro_codigo As Integer
-            bandera_encontro_codigo = 0
             For i = 0 To (cantidad_stock - 1)
-                'Si el PRODUCTO ingresado existe0'
-                If TextBoxCodigo.Text <> "" And DataSet1.Tables("stock").Rows(i).Item("codigo") = TextBoxCodigo.Text Then
-                    Dim nuevo_ingreso As DataRow = DataSet1.Tables("ingreso").NewRow()
+                'Si el CODIGO ingresado existe'
+                If DataSet1.Tables("stock").Rows(i).Item("codigo") = TextBoxCodigo.Text And DataSet1.Tables("stock").Rows(i).Item("codigo_barras") = TextBoxCodigoDeBarras.Text Then
 
-                    Dim cantidad_proveedores As Integer
-                    cantidad_proveedores = DataSet1.Tables("proveedor").Rows.Count
-                    For j = 0 To (cantidad_proveedores - 1)
-                        'Si el PROVEEDOR ingresado existe'
-                        If DataSet1.Tables("proveedor").Rows(j).Item("ruc_proveedor") = TextBoxRUCproveedor.Text Then
-                            nuevo_ingreso("id_proveedor") = DataSet1.Tables("proveedor").Rows(j).Item("id_proveedor")
-                        End If
-                    Next
 
-                    nuevo_ingreso("id_stock") = DataSet1.Tables("stock").Rows(i).Item("id_stock")
-                    nuevo_ingreso("cantidad") = TextBoxCantidad.Text
-                    nuevo_ingreso("factura_compra") = TextBoxFactura.Text
-                    nuevo_ingreso("precio_compra") = TextBoxPrecio.Text
-
-                    DataSet1.Tables("ingreso").Rows.Add(nuevo_ingreso)
+                    DataSet1.Tables("stock").Rows(i).Item("codigo_barras") = TextBoxCodigoDeBarras.Text
+                    DataSet1.Tables("stock").Rows(i).Item("codigo") = TextBoxCodigo.Text
+                    DataSet1.Tables("stock").Rows(i).Item("nombre") = TextBoxNombre.Text
+                    DataSet1.Tables("stock").Rows(i).Item("descripcion") = TextBoxDescripcion.Text
+                    DataSet1.Tables("stock").Rows(i).Item("precio_venta") = TextBoxPrecioDeVenta.Text
 
                     Validate()
-                    IngresoBindingSource.EndEdit()
-                    IngresoTableAdapter.Update(DataSet1.ingreso)
+                    StockBindingSource.EndEdit()
+                    StockTableAdapter.Update(DataSet1.stock)
 
-                    bandera_encontro_codigo = 1
                 End If
             Next
 
-            If bandera_encontro_codigo = 0 Then 'si no encontro CODIGO, necesariamente tiene que encontrar CODIGO DE BARRAS
-                For i = 0 To (cantidad_stock - 1)
-                    'Si el PRODUCTO ingresado existe'
-                    If DataSet1.Tables("stock").Rows(i).Item("codigo_barras") = TextBoxCodigoDeBarras.Text Then
-                        Dim nuevo_ingreso As DataRow = DataSet1.Tables("ingreso").NewRow()
 
-                        Dim cantidad_proveedores As Integer
-                        cantidad_proveedores = DataSet1.Tables("proveedor").Rows.Count
-                        For j = 0 To (cantidad_proveedores - 1)
-                            'Si el PROVEEDOR ingresado existe'
-                            If DataSet1.Tables("proveedor").Rows(j).Item("ruc_proveedor") = TextBoxRUCproveedor.Text Then
-                                nuevo_ingreso("id_proveedor") = DataSet1.Tables("proveedor").Rows(j).Item("id_proveedor")
+
+            '''cache_update DOS
+            Me.ProveedorTableAdapter.Fill(Me.DataSet1.proveedor)
+                    Me.IngresoTableAdapter.Fill(Me.DataSet1.ingreso)
+                    Me.StockTableAdapter.Fill(Me.DataSet1.stock)
+                    '''
+
+                    cantidad_stock = DataSet1.Tables("stock").Rows.Count
+
+                    ''' ESTA ES LA PARTE PARA METER EN 'INGRESO'
+                    Dim bandera_encontro_codigo As Integer
+                    bandera_encontro_codigo = 0
+                    For i = 0 To (cantidad_stock - 1)
+                        'Si el PRODUCTO ingresado existe0'
+                        If TextBoxCodigo.Text <> "" And DataSet1.Tables("stock").Rows(i).Item("codigo") = TextBoxCodigo.Text Then
+                            Dim nuevo_ingreso As DataRow = DataSet1.Tables("ingreso").NewRow()
+
+                            Dim cantidad_proveedores As Integer
+                            cantidad_proveedores = DataSet1.Tables("proveedor").Rows.Count
+                            For j = 0 To (cantidad_proveedores - 1)
+                                'Si el PROVEEDOR ingresado existe'
+                                If DataSet1.Tables("proveedor").Rows(j).Item("ruc_proveedor") = TextBoxRUCproveedor.Text Then
+                                    nuevo_ingreso("id_proveedor") = DataSet1.Tables("proveedor").Rows(j).Item("id_proveedor")
+                                End If
+                            Next
+
+                            nuevo_ingreso("id_stock") = DataSet1.Tables("stock").Rows(i).Item("id_stock")
+                            nuevo_ingreso("cantidad") = TextBoxCantidad.Text
+                            nuevo_ingreso("factura_compra") = TextBoxFactura.Text
+                            nuevo_ingreso("precio_compra") = TextBoxPrecio.Text
+
+                            DataSet1.Tables("ingreso").Rows.Add(nuevo_ingreso)
+
+                            Validate()
+                            IngresoBindingSource.EndEdit()
+                            IngresoTableAdapter.Update(DataSet1.ingreso)
+
+                            bandera_encontro_codigo = 1
+                        End If
+                    Next
+
+                    If bandera_encontro_codigo = 0 Then 'si no encontro CODIGO, necesariamente tiene que encontrar CODIGO DE BARRAS
+                        For i = 0 To (cantidad_stock - 1)
+                            'Si el PRODUCTO ingresado existe'
+                            If DataSet1.Tables("stock").Rows(i).Item("codigo_barras") = TextBoxCodigoDeBarras.Text Then
+                                Dim nuevo_ingreso As DataRow = DataSet1.Tables("ingreso").NewRow()
+
+                                Dim cantidad_proveedores As Integer
+                                cantidad_proveedores = DataSet1.Tables("proveedor").Rows.Count
+                                For j = 0 To (cantidad_proveedores - 1)
+                                    'Si el PROVEEDOR ingresado existe'
+                                    If DataSet1.Tables("proveedor").Rows(j).Item("ruc_proveedor") = TextBoxRUCproveedor.Text Then
+                                        nuevo_ingreso("id_proveedor") = DataSet1.Tables("proveedor").Rows(j).Item("id_proveedor")
+                                    End If
+                                Next
+
+                                nuevo_ingreso("id_stock") = DataSet1.Tables("stock").Rows(i).Item("id_stock")
+                                nuevo_ingreso("cantidad") = TextBoxCantidad.Text
+                                nuevo_ingreso("factura_compra") = TextBoxFactura.Text
+                                nuevo_ingreso("precio_compra") = TextBoxPrecio.Text
+
+                                DataSet1.Tables("ingreso").Rows.Add(nuevo_ingreso)
+
+                                Validate()
+                                IngresoBindingSource.EndEdit()
+                                IngresoTableAdapter.Update(DataSet1.ingreso)
+
                             End If
                         Next
-
-                        nuevo_ingreso("id_stock") = DataSet1.Tables("stock").Rows(i).Item("id_stock")
-                        nuevo_ingreso("cantidad") = TextBoxCantidad.Text
-                        nuevo_ingreso("factura_compra") = TextBoxFactura.Text
-                        nuevo_ingreso("precio_compra") = TextBoxPrecio.Text
-
-                        DataSet1.Tables("ingreso").Rows.Add(nuevo_ingreso)
-
-                        Validate()
-                        IngresoBindingSource.EndEdit()
-                        IngresoTableAdapter.Update(DataSet1.ingreso)
-
                     End If
-                Next
-            End If
 
 
-            LabelInsertarProducto.Show()
-            LabelInsertarProducto.Text = "Insertado Correctamente"
-            LabelInsertarProducto.ForeColor = Color.Green
+                    LabelInsertarProducto.Show()
+                    LabelInsertarProducto.Text = "Insertado Correctamente"
+                    LabelInsertarProducto.ForeColor = Color.Green
 
-            ButtonInsertarProducto.Focus()
-        End If
+                    ButtonInsertarProducto.Focus()
+                End If
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBoxCodigoDeBarras.TextChanged
