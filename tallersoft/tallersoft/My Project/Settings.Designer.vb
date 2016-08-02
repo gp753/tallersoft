@@ -22,7 +22,11 @@ Namespace My
         
         Private Shared defaultInstance As MySettings = CType(Global.System.Configuration.ApplicationSettingsBase.Synchronized(New MySettings()),MySettings)
         
+<<<<<<< HEAD
+#Region "My.Settings Auto-Save Functionality"
+=======
 #Region "Funcionalidad para autoguardar de My.Settings"
+>>>>>>> refs/remotes/origin/master
 #If _MyType = "WindowsForms" Then
     Private Shared addedHandler As Boolean
 
@@ -57,7 +61,11 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+<<<<<<< HEAD
+         Global.System.Configuration.DefaultSettingValueAttribute("Dsn=tallersoft;uid=postgres;pwd=POSTGRES")>  _
+=======
          Global.System.Configuration.DefaultSettingValueAttribute("Dsn=taller;uid=postgres;pwd=POSTGRES")>  _
+>>>>>>> refs/remotes/origin/master
         Public ReadOnly Property ConnectionString() As String
             Get
                 Return CType(Me("ConnectionString"),String)

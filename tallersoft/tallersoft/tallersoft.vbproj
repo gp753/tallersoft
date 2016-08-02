@@ -78,10 +78,17 @@
     <Compile Include="Cliente.vb">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
+    <Compile Include="DataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+=======
     <Compile Include="DataSet11.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet11.xsd</DependentUpon>
+>>>>>>> refs/remotes/origin/master
     </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
@@ -134,11 +141,26 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Stock.resx">
+      <DependentUpon>Stock.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="venta.resx">
       <DependentUpon>venta.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+=======
     <None Include="DataSet11.xsc">
       <DependentUpon>DataSet11.xsd</DependentUpon>
     </None>
@@ -149,6 +171,7 @@
     </None>
     <None Include="DataSet11.xss">
       <DependentUpon>DataSet11.xsd</DependentUpon>
+>>>>>>> refs/remotes/origin/master
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
