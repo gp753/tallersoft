@@ -107,17 +107,14 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="moduloDatos.vb" />
-=======
     <Compile Include="Form2.Designer.vb">
       <DependentUpon>Form2.vb</DependentUpon>
     </Compile>
     <Compile Include="Form2.vb">
       <SubType>Form</SubType>
     </Compile>
->>>>>>> parent of daf2c68... init 0
-    <Compile Include="My Project\AssemblyInfo.vb" />
+  <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
@@ -146,7 +143,6 @@
     <EmbeddedResource Include="Cliente.resx">
       <DependentUpon>Cliente.vb</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="crearClientes.resx">
       <DependentUpon>crearClientes.vb</DependentUpon>
     </EmbeddedResource>
@@ -155,10 +151,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="editarProveedores.resx">
       <DependentUpon>editarProveedores.vb</DependentUpon>
-=======
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.vb</DependentUpon>
->>>>>>> parent of daf2c68... init 0
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
