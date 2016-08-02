@@ -75,6 +75,35 @@ Partial Class Stock
         Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBoxModificarNuevoPrecioDeVenta = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.TextBoxModificarNuevaDescripcion = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.TextBoxModificarNuevoNombre = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.TextBoxModificarNuevoCodigoDeBarras = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.TextBoxModificarNuevoCodigo = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.TextBoxModificarCodigoDeBarras = New System.Windows.Forms.TextBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.TextBoxModificarCodigo = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.LabelModificarProducto = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.VentaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.VentaTableAdapter = New tallersoft.DataSet1TableAdapters.ventaTableAdapter()
+        Me.VentaDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GroupBoxIngresarProducto = New System.Windows.Forms.GroupBox()
+        Me.GroupBoxModificarProducto = New System.Windows.Forms.GroupBox()
+        Me.ButtonIngresarProducto = New System.Windows.Forms.Button()
+        Me.ButtonModificarProducto = New System.Windows.Forms.Button()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StockBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StockDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,11 +111,15 @@ Partial Class Stock
         CType(Me.IngresoDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProveedorDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VentaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VentaDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBoxIngresarProducto.SuspendLayout()
+        Me.GroupBoxModificarProducto.SuspendLayout()
         Me.SuspendLayout()
         '
         'TextBoxCodigo
         '
-        Me.TextBoxCodigo.Location = New System.Drawing.Point(151, 44)
+        Me.TextBoxCodigo.Location = New System.Drawing.Point(124, 41)
         Me.TextBoxCodigo.Name = "TextBoxCodigo"
         Me.TextBoxCodigo.Size = New System.Drawing.Size(161, 20)
         Me.TextBoxCodigo.TabIndex = 1
@@ -94,7 +127,7 @@ Partial Class Stock
         'Label41a
         '
         Me.Label41a.AutoSize = True
-        Me.Label41a.Location = New System.Drawing.Point(106, 48)
+        Me.Label41a.Location = New System.Drawing.Point(79, 45)
         Me.Label41a.Name = "Label41a"
         Me.Label41a.Size = New System.Drawing.Size(43, 13)
         Me.Label41a.TabIndex = 4
@@ -102,7 +135,7 @@ Partial Class Stock
         '
         'TextBoxCodigoDeBarras
         '
-        Me.TextBoxCodigoDeBarras.Location = New System.Drawing.Point(151, 18)
+        Me.TextBoxCodigoDeBarras.Location = New System.Drawing.Point(124, 15)
         Me.TextBoxCodigoDeBarras.Name = "TextBoxCodigoDeBarras"
         Me.TextBoxCodigoDeBarras.Size = New System.Drawing.Size(161, 20)
         Me.TextBoxCodigoDeBarras.TabIndex = 0
@@ -110,7 +143,7 @@ Partial Class Stock
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(59, 22)
+        Me.Label1.Location = New System.Drawing.Point(32, 19)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(90, 13)
         Me.Label1.TabIndex = 6
@@ -118,7 +151,7 @@ Partial Class Stock
         '
         'TextBoxDescripcion
         '
-        Me.TextBoxDescripcion.Location = New System.Drawing.Point(151, 107)
+        Me.TextBoxDescripcion.Location = New System.Drawing.Point(124, 104)
         Me.TextBoxDescripcion.Name = "TextBoxDescripcion"
         Me.TextBoxDescripcion.Size = New System.Drawing.Size(161, 20)
         Me.TextBoxDescripcion.TabIndex = 3
@@ -126,7 +159,7 @@ Partial Class Stock
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(83, 111)
+        Me.Label2.Location = New System.Drawing.Point(56, 108)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(66, 13)
         Me.Label2.TabIndex = 10
@@ -134,7 +167,7 @@ Partial Class Stock
         '
         'TextBoxNombre
         '
-        Me.TextBoxNombre.Location = New System.Drawing.Point(151, 81)
+        Me.TextBoxNombre.Location = New System.Drawing.Point(124, 78)
         Me.TextBoxNombre.Name = "TextBoxNombre"
         Me.TextBoxNombre.Size = New System.Drawing.Size(161, 20)
         Me.TextBoxNombre.TabIndex = 2
@@ -142,7 +175,7 @@ Partial Class Stock
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(102, 85)
+        Me.Label3.Location = New System.Drawing.Point(75, 82)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(47, 13)
         Me.Label3.TabIndex = 8
@@ -150,7 +183,7 @@ Partial Class Stock
         '
         'TextBoxPrecioDeVenta
         '
-        Me.TextBoxPrecioDeVenta.Location = New System.Drawing.Point(151, 133)
+        Me.TextBoxPrecioDeVenta.Location = New System.Drawing.Point(124, 130)
         Me.TextBoxPrecioDeVenta.Name = "TextBoxPrecioDeVenta"
         Me.TextBoxPrecioDeVenta.Size = New System.Drawing.Size(161, 20)
         Me.TextBoxPrecioDeVenta.TabIndex = 4
@@ -158,7 +191,7 @@ Partial Class Stock
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(64, 137)
+        Me.Label5.Location = New System.Drawing.Point(37, 134)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(85, 13)
         Me.Label5.TabIndex = 12
@@ -166,7 +199,7 @@ Partial Class Stock
         '
         'ButtonInsertarProducto
         '
-        Me.ButtonInsertarProducto.Location = New System.Drawing.Point(65, 362)
+        Me.ButtonInsertarProducto.Location = New System.Drawing.Point(38, 359)
         Me.ButtonInsertarProducto.Name = "ButtonInsertarProducto"
         Me.ButtonInsertarProducto.Size = New System.Drawing.Size(96, 24)
         Me.ButtonInsertarProducto.TabIndex = 11
@@ -176,7 +209,7 @@ Partial Class Stock
         'LabelInsertarProducto
         '
         Me.LabelInsertarProducto.AutoSize = True
-        Me.LabelInsertarProducto.Location = New System.Drawing.Point(173, 338)
+        Me.LabelInsertarProducto.Location = New System.Drawing.Point(146, 335)
         Me.LabelInsertarProducto.Name = "LabelInsertarProducto"
         Me.LabelInsertarProducto.Size = New System.Drawing.Size(111, 13)
         Me.LabelInsertarProducto.TabIndex = 15
@@ -213,9 +246,9 @@ Partial Class Stock
         Me.StockDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.StockDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
         Me.StockDataGridView.DataSource = Me.StockBindingSource
-        Me.StockDataGridView.Location = New System.Drawing.Point(373, 67)
+        Me.StockDataGridView.Location = New System.Drawing.Point(300, 67)
         Me.StockDataGridView.Name = "StockDataGridView"
-        Me.StockDataGridView.Size = New System.Drawing.Size(183, 75)
+        Me.StockDataGridView.Size = New System.Drawing.Size(141, 75)
         Me.StockDataGridView.TabIndex = 2
         Me.StockDataGridView.Visible = False
         '
@@ -258,15 +291,15 @@ Partial Class Stock
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(109, 225)
+        Me.Label4.Location = New System.Drawing.Point(85, 222)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(40, 13)
+        Me.Label4.Size = New System.Drawing.Size(37, 13)
         Me.Label4.TabIndex = 20
-        Me.Label4.Text = "Precio:"
+        Me.Label4.Text = "Costo:"
         '
         'TextBoxFactura
         '
-        Me.TextBoxFactura.Location = New System.Drawing.Point(151, 195)
+        Me.TextBoxFactura.Location = New System.Drawing.Point(124, 192)
         Me.TextBoxFactura.Name = "TextBoxFactura"
         Me.TextBoxFactura.Size = New System.Drawing.Size(161, 20)
         Me.TextBoxFactura.TabIndex = 6
@@ -274,7 +307,7 @@ Partial Class Stock
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(103, 199)
+        Me.Label6.Location = New System.Drawing.Point(76, 196)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(46, 13)
         Me.Label6.TabIndex = 18
@@ -282,7 +315,7 @@ Partial Class Stock
         '
         'TextBoxCantidad
         '
-        Me.TextBoxCantidad.Location = New System.Drawing.Point(151, 169)
+        Me.TextBoxCantidad.Location = New System.Drawing.Point(124, 166)
         Me.TextBoxCantidad.Name = "TextBoxCantidad"
         Me.TextBoxCantidad.Size = New System.Drawing.Size(161, 20)
         Me.TextBoxCantidad.TabIndex = 5
@@ -290,7 +323,7 @@ Partial Class Stock
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(97, 173)
+        Me.Label7.Location = New System.Drawing.Point(70, 170)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(52, 13)
         Me.Label7.TabIndex = 16
@@ -298,7 +331,7 @@ Partial Class Stock
         '
         'TextBoxPrecio
         '
-        Me.TextBoxPrecio.Location = New System.Drawing.Point(151, 221)
+        Me.TextBoxPrecio.Location = New System.Drawing.Point(124, 218)
         Me.TextBoxPrecio.Name = "TextBoxPrecio"
         Me.TextBoxPrecio.Size = New System.Drawing.Size(161, 20)
         Me.TextBoxPrecio.TabIndex = 7
@@ -318,9 +351,9 @@ Partial Class Stock
         Me.IngresoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.IngresoDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12})
         Me.IngresoDataGridView.DataSource = Me.IngresoBindingSource
-        Me.IngresoDataGridView.Location = New System.Drawing.Point(373, 139)
+        Me.IngresoDataGridView.Location = New System.Drawing.Point(300, 139)
         Me.IngresoDataGridView.Name = "IngresoDataGridView"
-        Me.IngresoDataGridView.Size = New System.Drawing.Size(183, 79)
+        Me.IngresoDataGridView.Size = New System.Drawing.Size(141, 79)
         Me.IngresoDataGridView.TabIndex = 21
         Me.IngresoDataGridView.Visible = False
         '
@@ -362,7 +395,7 @@ Partial Class Stock
         '
         'TextBoxNumeroProveedor
         '
-        Me.TextBoxNumeroProveedor.Location = New System.Drawing.Point(151, 309)
+        Me.TextBoxNumeroProveedor.Location = New System.Drawing.Point(124, 306)
         Me.TextBoxNumeroProveedor.Name = "TextBoxNumeroProveedor"
         Me.TextBoxNumeroProveedor.Size = New System.Drawing.Size(161, 20)
         Me.TextBoxNumeroProveedor.TabIndex = 10
@@ -370,7 +403,7 @@ Partial Class Stock
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(33, 313)
+        Me.Label8.Location = New System.Drawing.Point(6, 310)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(116, 13)
         Me.Label8.TabIndex = 27
@@ -378,7 +411,7 @@ Partial Class Stock
         '
         'TextBoxNombreProveedor
         '
-        Me.TextBoxNombreProveedor.Location = New System.Drawing.Point(151, 283)
+        Me.TextBoxNombreProveedor.Location = New System.Drawing.Point(124, 280)
         Me.TextBoxNombreProveedor.Name = "TextBoxNombreProveedor"
         Me.TextBoxNombreProveedor.Size = New System.Drawing.Size(161, 20)
         Me.TextBoxNombreProveedor.TabIndex = 9
@@ -386,7 +419,7 @@ Partial Class Stock
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(33, 287)
+        Me.Label9.Location = New System.Drawing.Point(6, 284)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(116, 13)
         Me.Label9.TabIndex = 26
@@ -394,7 +427,7 @@ Partial Class Stock
         '
         'TextBoxRUCproveedor
         '
-        Me.TextBoxRUCproveedor.Location = New System.Drawing.Point(151, 257)
+        Me.TextBoxRUCproveedor.Location = New System.Drawing.Point(124, 254)
         Me.TextBoxRUCproveedor.Name = "TextBoxRUCproveedor"
         Me.TextBoxRUCproveedor.Size = New System.Drawing.Size(161, 20)
         Me.TextBoxRUCproveedor.TabIndex = 8
@@ -402,7 +435,7 @@ Partial Class Stock
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(47, 261)
+        Me.Label10.Location = New System.Drawing.Point(20, 258)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(102, 13)
         Me.Label10.TabIndex = 25
@@ -423,9 +456,9 @@ Partial Class Stock
         Me.ProveedorDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ProveedorDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16})
         Me.ProveedorDataGridView.DataSource = Me.ProveedorBindingSource
-        Me.ProveedorDataGridView.Location = New System.Drawing.Point(373, 220)
+        Me.ProveedorDataGridView.Location = New System.Drawing.Point(300, 220)
         Me.ProveedorDataGridView.Name = "ProveedorDataGridView"
-        Me.ProveedorDataGridView.Size = New System.Drawing.Size(182, 80)
+        Me.ProveedorDataGridView.Size = New System.Drawing.Size(140, 80)
         Me.ProveedorDataGridView.TabIndex = 27
         Me.ProveedorDataGridView.Visible = False
         '
@@ -455,44 +488,295 @@ Partial Class Stock
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(225, 362)
+        Me.Button1.Location = New System.Drawing.Point(198, 359)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(96, 24)
         Me.Button1.TabIndex = 28
         Me.Button1.Text = "Borrar Campos"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'TextBoxModificarNuevoPrecioDeVenta
+        '
+        Me.TextBoxModificarNuevoPrecioDeVenta.Location = New System.Drawing.Point(127, 233)
+        Me.TextBoxModificarNuevoPrecioDeVenta.Name = "TextBoxModificarNuevoPrecioDeVenta"
+        Me.TextBoxModificarNuevoPrecioDeVenta.Size = New System.Drawing.Size(161, 20)
+        Me.TextBoxModificarNuevoPrecioDeVenta.TabIndex = 33
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(5, 237)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(120, 13)
+        Me.Label14.TabIndex = 41
+        Me.Label14.Text = "Nuevo Precio de venta:"
+        '
+        'TextBoxModificarNuevaDescripcion
+        '
+        Me.TextBoxModificarNuevaDescripcion.Location = New System.Drawing.Point(127, 207)
+        Me.TextBoxModificarNuevaDescripcion.Name = "TextBoxModificarNuevaDescripcion"
+        Me.TextBoxModificarNuevaDescripcion.Size = New System.Drawing.Size(161, 20)
+        Me.TextBoxModificarNuevaDescripcion.TabIndex = 32
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(24, 211)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(101, 13)
+        Me.Label15.TabIndex = 40
+        Me.Label15.Text = "Nueva Descripción:"
+        '
+        'TextBoxModificarNuevoNombre
+        '
+        Me.TextBoxModificarNuevoNombre.Location = New System.Drawing.Point(127, 181)
+        Me.TextBoxModificarNuevoNombre.Name = "TextBoxModificarNuevoNombre"
+        Me.TextBoxModificarNuevoNombre.Size = New System.Drawing.Size(161, 20)
+        Me.TextBoxModificarNuevoNombre.TabIndex = 31
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(43, 185)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(82, 13)
+        Me.Label16.TabIndex = 39
+        Me.Label16.Text = "Nuevo Nombre:"
+        '
+        'TextBoxModificarNuevoCodigoDeBarras
+        '
+        Me.TextBoxModificarNuevoCodigoDeBarras.Enabled = False
+        Me.TextBoxModificarNuevoCodigoDeBarras.Location = New System.Drawing.Point(127, 118)
+        Me.TextBoxModificarNuevoCodigoDeBarras.Name = "TextBoxModificarNuevoCodigoDeBarras"
+        Me.TextBoxModificarNuevoCodigoDeBarras.Size = New System.Drawing.Size(161, 20)
+        Me.TextBoxModificarNuevoCodigoDeBarras.TabIndex = 29
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(35, 122)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(90, 13)
+        Me.Label17.TabIndex = 37
+        Me.Label17.Text = "Código de barras:"
+        '
+        'TextBoxModificarNuevoCodigo
+        '
+        Me.TextBoxModificarNuevoCodigo.Location = New System.Drawing.Point(127, 144)
+        Me.TextBoxModificarNuevoCodigo.Name = "TextBoxModificarNuevoCodigo"
+        Me.TextBoxModificarNuevoCodigo.Size = New System.Drawing.Size(161, 20)
+        Me.TextBoxModificarNuevoCodigo.TabIndex = 30
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(47, 148)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(78, 13)
+        Me.Label18.TabIndex = 34
+        Me.Label18.Text = "Nuevo Código:"
+        '
+        'TextBoxModificarCodigoDeBarras
+        '
+        Me.TextBoxModificarCodigoDeBarras.Location = New System.Drawing.Point(127, 55)
+        Me.TextBoxModificarCodigoDeBarras.Name = "TextBoxModificarCodigoDeBarras"
+        Me.TextBoxModificarCodigoDeBarras.Size = New System.Drawing.Size(161, 20)
+        Me.TextBoxModificarCodigoDeBarras.TabIndex = 0
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(35, 59)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(90, 13)
+        Me.Label19.TabIndex = 48
+        Me.Label19.Text = "Código de barras:"
+        '
+        'TextBoxModificarCodigo
+        '
+        Me.TextBoxModificarCodigo.Location = New System.Drawing.Point(127, 81)
+        Me.TextBoxModificarCodigo.Name = "TextBoxModificarCodigo"
+        Me.TextBoxModificarCodigo.Size = New System.Drawing.Size(161, 20)
+        Me.TextBoxModificarCodigo.TabIndex = 46
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(82, 85)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(43, 13)
+        Me.Label20.TabIndex = 47
+        Me.Label20.Text = "Código:"
+        '
+        'LabelModificarProducto
+        '
+        Me.LabelModificarProducto.AutoSize = True
+        Me.LabelModificarProducto.Location = New System.Drawing.Point(136, 271)
+        Me.LabelModificarProducto.Name = "LabelModificarProducto"
+        Me.LabelModificarProducto.Size = New System.Drawing.Size(119, 13)
+        Me.LabelModificarProducto.TabIndex = 49
+        Me.LabelModificarProducto.Text = "LabelModificarProducto"
+        Me.LabelModificarProducto.Visible = False
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(192, 313)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(96, 24)
+        Me.Button2.TabIndex = 51
+        Me.Button2.Text = "Borrar Campos"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(32, 313)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(104, 24)
+        Me.Button3.TabIndex = 50
+        Me.Button3.Text = "Modificar Producto"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'VentaBindingSource
+        '
+        Me.VentaBindingSource.DataMember = "venta"
+        Me.VentaBindingSource.DataSource = Me.DataSet1
+        '
+        'VentaTableAdapter
+        '
+        Me.VentaTableAdapter.ClearBeforeFill = True
+        '
+        'VentaDataGridView
+        '
+        Me.VentaDataGridView.AutoGenerateColumns = False
+        Me.VentaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.VentaDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn21})
+        Me.VentaDataGridView.DataSource = Me.VentaBindingSource
+        Me.VentaDataGridView.Location = New System.Drawing.Point(300, 297)
+        Me.VentaDataGridView.Name = "VentaDataGridView"
+        Me.VentaDataGridView.Size = New System.Drawing.Size(140, 79)
+        Me.VentaDataGridView.TabIndex = 51
+        Me.VentaDataGridView.Visible = False
+        '
+        'DataGridViewTextBoxColumn17
+        '
+        Me.DataGridViewTextBoxColumn17.DataPropertyName = "id_venta"
+        Me.DataGridViewTextBoxColumn17.HeaderText = "id_venta"
+        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
+        '
+        'DataGridViewTextBoxColumn18
+        '
+        Me.DataGridViewTextBoxColumn18.DataPropertyName = "id_cliente"
+        Me.DataGridViewTextBoxColumn18.HeaderText = "id_cliente"
+        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
+        '
+        'DataGridViewTextBoxColumn19
+        '
+        Me.DataGridViewTextBoxColumn19.DataPropertyName = "id_stock"
+        Me.DataGridViewTextBoxColumn19.HeaderText = "id_stock"
+        Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
+        '
+        'DataGridViewTextBoxColumn20
+        '
+        Me.DataGridViewTextBoxColumn20.DataPropertyName = "cantidad_venta"
+        Me.DataGridViewTextBoxColumn20.HeaderText = "cantidad_venta"
+        Me.DataGridViewTextBoxColumn20.Name = "DataGridViewTextBoxColumn20"
+        '
+        'DataGridViewTextBoxColumn21
+        '
+        Me.DataGridViewTextBoxColumn21.DataPropertyName = "factura_venta"
+        Me.DataGridViewTextBoxColumn21.HeaderText = "factura_venta"
+        Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
+        '
+        'GroupBoxIngresarProducto
+        '
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.Button1)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.TextBoxNumeroProveedor)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.Label8)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.TextBoxNombreProveedor)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.Label9)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.TextBoxRUCproveedor)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.Label10)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.TextBoxPrecio)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.Label4)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.TextBoxFactura)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.Label6)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.TextBoxCantidad)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.Label7)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.LabelInsertarProducto)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.ButtonInsertarProducto)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.TextBoxPrecioDeVenta)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.Label5)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.TextBoxDescripcion)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.Label2)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.TextBoxNombre)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.Label3)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.TextBoxCodigoDeBarras)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.Label1)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.TextBoxCodigo)
+        Me.GroupBoxIngresarProducto.Controls.Add(Me.Label41a)
+        Me.GroupBoxIngresarProducto.Location = New System.Drawing.Point(141, 15)
+        Me.GroupBoxIngresarProducto.Name = "GroupBoxIngresarProducto"
+        Me.GroupBoxIngresarProducto.Size = New System.Drawing.Size(304, 400)
+        Me.GroupBoxIngresarProducto.TabIndex = 52
+        Me.GroupBoxIngresarProducto.TabStop = False
+        Me.GroupBoxIngresarProducto.Text = "Ingresar Producto"
+        '
+        'GroupBoxModificarProducto
+        '
+        Me.GroupBoxModificarProducto.Controls.Add(Me.Button2)
+        Me.GroupBoxModificarProducto.Controls.Add(Me.Button3)
+        Me.GroupBoxModificarProducto.Controls.Add(Me.LabelModificarProducto)
+        Me.GroupBoxModificarProducto.Controls.Add(Me.TextBoxModificarCodigoDeBarras)
+        Me.GroupBoxModificarProducto.Controls.Add(Me.Label19)
+        Me.GroupBoxModificarProducto.Controls.Add(Me.TextBoxModificarCodigo)
+        Me.GroupBoxModificarProducto.Controls.Add(Me.Label20)
+        Me.GroupBoxModificarProducto.Controls.Add(Me.TextBoxModificarNuevoPrecioDeVenta)
+        Me.GroupBoxModificarProducto.Controls.Add(Me.Label14)
+        Me.GroupBoxModificarProducto.Controls.Add(Me.TextBoxModificarNuevaDescripcion)
+        Me.GroupBoxModificarProducto.Controls.Add(Me.Label15)
+        Me.GroupBoxModificarProducto.Controls.Add(Me.TextBoxModificarNuevoNombre)
+        Me.GroupBoxModificarProducto.Controls.Add(Me.Label16)
+        Me.GroupBoxModificarProducto.Controls.Add(Me.TextBoxModificarNuevoCodigoDeBarras)
+        Me.GroupBoxModificarProducto.Controls.Add(Me.Label17)
+        Me.GroupBoxModificarProducto.Controls.Add(Me.TextBoxModificarNuevoCodigo)
+        Me.GroupBoxModificarProducto.Controls.Add(Me.Label18)
+        Me.GroupBoxModificarProducto.Location = New System.Drawing.Point(488, 15)
+        Me.GroupBoxModificarProducto.Name = "GroupBoxModificarProducto"
+        Me.GroupBoxModificarProducto.Size = New System.Drawing.Size(304, 400)
+        Me.GroupBoxModificarProducto.TabIndex = 53
+        Me.GroupBoxModificarProducto.TabStop = False
+        Me.GroupBoxModificarProducto.Text = "Modificar Producto"
+        Me.GroupBoxModificarProducto.Visible = False
+        '
+        'ButtonIngresarProducto
+        '
+        Me.ButtonIngresarProducto.Location = New System.Drawing.Point(30, 52)
+        Me.ButtonIngresarProducto.Name = "ButtonIngresarProducto"
+        Me.ButtonIngresarProducto.Size = New System.Drawing.Size(72, 34)
+        Me.ButtonIngresarProducto.TabIndex = 54
+        Me.ButtonIngresarProducto.Text = "Ingresar Producto"
+        Me.ButtonIngresarProducto.UseVisualStyleBackColor = True
+        '
+        'ButtonModificarProducto
+        '
+        Me.ButtonModificarProducto.Location = New System.Drawing.Point(30, 108)
+        Me.ButtonModificarProducto.Name = "ButtonModificarProducto"
+        Me.ButtonModificarProducto.Size = New System.Drawing.Size(72, 34)
+        Me.ButtonModificarProducto.TabIndex = 55
+        Me.ButtonModificarProducto.Text = "Modificar Producto"
+        Me.ButtonModificarProducto.UseVisualStyleBackColor = True
+        '
         'Stock
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(694, 486)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(839, 432)
+        Me.Controls.Add(Me.ButtonModificarProducto)
+        Me.Controls.Add(Me.ButtonIngresarProducto)
+        Me.Controls.Add(Me.GroupBoxIngresarProducto)
+        Me.Controls.Add(Me.GroupBoxModificarProducto)
+        Me.Controls.Add(Me.VentaDataGridView)
         Me.Controls.Add(Me.ProveedorDataGridView)
-        Me.Controls.Add(Me.TextBoxNumeroProveedor)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.TextBoxNombreProveedor)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.TextBoxRUCproveedor)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.TextBoxPrecio)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TextBoxFactura)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.TextBoxCantidad)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.LabelInsertarProducto)
-        Me.Controls.Add(Me.ButtonInsertarProducto)
-        Me.Controls.Add(Me.TextBoxPrecioDeVenta)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.TextBoxDescripcion)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.TextBoxNombre)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TextBoxCodigoDeBarras)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBoxCodigo)
-        Me.Controls.Add(Me.Label41a)
         Me.Controls.Add(Me.IngresoDataGridView)
         Me.Controls.Add(Me.StockDataGridView)
         Me.Name = "Stock"
@@ -504,8 +788,13 @@ Partial Class Stock
         CType(Me.IngresoDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProveedorDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VentaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VentaDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBoxIngresarProducto.ResumeLayout(False)
+        Me.GroupBoxIngresarProducto.PerformLayout()
+        Me.GroupBoxModificarProducto.ResumeLayout(False)
+        Me.GroupBoxModificarProducto.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -561,4 +850,33 @@ Partial Class Stock
     Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn16 As DataGridViewTextBoxColumn
     Friend WithEvents Button1 As Button
+    Friend WithEvents TextBoxModificarNuevoPrecioDeVenta As TextBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents TextBoxModificarNuevaDescripcion As TextBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents TextBoxModificarNuevoNombre As TextBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents TextBoxModificarNuevoCodigoDeBarras As TextBox
+    Friend WithEvents Label17 As Label
+    Friend WithEvents TextBoxModificarNuevoCodigo As TextBox
+    Friend WithEvents Label18 As Label
+    Friend WithEvents TextBoxModificarCodigoDeBarras As TextBox
+    Friend WithEvents Label19 As Label
+    Friend WithEvents TextBoxModificarCodigo As TextBox
+    Friend WithEvents Label20 As Label
+    Friend WithEvents LabelModificarProducto As Label
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents VentaBindingSource As BindingSource
+    Friend WithEvents VentaTableAdapter As DataSet1TableAdapters.ventaTableAdapter
+    Friend WithEvents VentaDataGridView As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn18 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn19 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn20 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn21 As DataGridViewTextBoxColumn
+    Friend WithEvents GroupBoxIngresarProducto As GroupBox
+    Friend WithEvents GroupBoxModificarProducto As GroupBox
+    Friend WithEvents ButtonIngresarProducto As Button
+    Friend WithEvents ButtonModificarProducto As Button
 End Class
