@@ -101,7 +101,7 @@
     End Sub
 
     Private Sub venta_guardar_Click(sender As Object, e As EventArgs) Handles venta_guardar.Click
-
+        Me.VentaTableAdapter.Fill(Me.DataSet1.venta)
         Dim ban = 0
         'comprobar existencia del cliente
         Dim id_cliente
@@ -361,6 +361,7 @@
     End Sub
 
     Private Sub Button29_Click(sender As Object, e As EventArgs) Handles Button29.Click
+        Me.VentaTableAdapter.Fill(Me.DataSet1.venta)
         Dim factura_buscada As String
         Dim pos As Integer
         Dim i As Integer
@@ -653,6 +654,74 @@
         Return strAux
     End Function
     Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
+        Me.VentaTableAdapter.Fill(Me.DataSet1.venta)
+        Dim factura As String
+        Dim ruc_cliente As Integer
+        Dim ban_operacion_realizada = 0
+        Dim id_cliente
+        ruc_cliente = buscar_en_tablas("cliente", "ruc_cliente", text_ruc_venta.Text)
 
+        factura = n_factura_textbox.Text
+        Dim i As Integer
+
+        For i = 0 To DataSet1.Tables("venta").Rows.Count - 1
+            If factura = DataSet1.Tables("venta").Rows(i).Item("factura_venta") Then
+                DataSet1.Tables("venta").Rows(i).Delete()
+            End If
+        Next
+
+        For i = 0 To DataGridView1.RowCount - 1
+
+            If DataGridView1.Item(0, i).Value IsNot "" Then
+                If DataGridView1.Item(3, i).Value IsNot Nothing Then
+
+                    If DataGridView1.Item(3, i).Value.ToString = "" Then
+
+                    Else
+                        If DataGridView1.Item(3, i).Value IsNot "0" Then
+                            id_cliente = DataSet1.Tables("cliente").Rows(ruc_cliente).Item("id_cliente")
+                            'cargar_venta(DataGridView1.Item(0, i).Value, id_cliente, TextBox17.Text, DataGridView1.Item(3, i).Value)
+                            Dim nueva_venta As DataRow = DataSet1.Tables("venta").NewRow
+                            Dim id_producto As Integer
+                            id_producto = DataSet1.Tables("stock").Rows(buscar_en_tablas("stock", "codigo", DataGridView1.Item(0, i).Value)).Item("id_stock")
+
+                            nueva_venta("id_cliente") = id_cliente
+                            nueva_venta("id_stock") = id_producto
+                            nueva_venta("cantidad_venta") = DataGridView1.Item(3, i).Value
+                            nueva_venta("factura_venta") = n_factura_textbox.Text
+
+                            DataSet1.Tables("venta").Rows.Add(nueva_venta)
+                            Validate()
+                            VentaBindingSource.EndEdit()
+                            VentaTableAdapter.Update(DataSet1.venta)
+                            MsgBox("Guardado Exitosamente")
+                        End If
+                    End If
+                End If
+            End If
+
+
+        Next
+        Validate()
+        VentaBindingSource.EndEdit()
+        VentaTableAdapter.Update(DataSet1.venta)
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim factura As String
+
+
+        factura = n_factura_textbox.Text
+        Dim i As Integer
+
+        For i = 0 To DataSet1.Tables("venta").Rows.Count - 1
+            If factura = DataSet1.Tables("venta").Rows(i).Item("factura_venta") Then
+                DataSet1.Tables("venta").Rows(i).Delete()
+
+            End If
+        Next
+        Validate()
+        VentaBindingSource.EndEdit()
+        VentaTableAdapter.Update(DataSet1.venta)
     End Sub
 End Class

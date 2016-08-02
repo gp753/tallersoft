@@ -24,7 +24,6 @@ Partial Class venta
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Button20 = New System.Windows.Forms.Button()
-        Me.bt_imprimir = New System.Windows.Forms.Button()
         Me.Button31 = New System.Windows.Forms.Button()
         Me.Button30 = New System.Windows.Forms.Button()
         Me.Button29 = New System.Windows.Forms.Button()
@@ -87,6 +86,7 @@ Partial Class venta
         Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,15 +107,6 @@ Partial Class venta
         Me.Button20.TabIndex = 49
         Me.Button20.Text = "Modificar"
         Me.Button20.UseVisualStyleBackColor = True
-        '
-        'bt_imprimir
-        '
-        Me.bt_imprimir.Location = New System.Drawing.Point(111, 413)
-        Me.bt_imprimir.Name = "bt_imprimir"
-        Me.bt_imprimir.Size = New System.Drawing.Size(75, 23)
-        Me.bt_imprimir.TabIndex = 48
-        Me.bt_imprimir.Text = "Imprimir"
-        Me.bt_imprimir.UseVisualStyleBackColor = True
         '
         'Button31
         '
@@ -556,17 +547,26 @@ Partial Class venta
         Me.DataGridViewTextBoxColumn22.HeaderText = "factura_venta"
         Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(112, 413)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 51
+        Me.Button1.Text = "Borrar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'venta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1312, 511)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.VentaDataGridView)
         Me.Controls.Add(Me.StockDataGridView)
         Me.Controls.Add(Me.IngresoDataGridView)
         Me.Controls.Add(Me.ClienteDataGridView)
         Me.Controls.Add(Me.Button20)
-        Me.Controls.Add(Me.bt_imprimir)
         Me.Controls.Add(Me.Button31)
         Me.Controls.Add(Me.Button30)
         Me.Controls.Add(Me.Button29)
@@ -607,7 +607,6 @@ Partial Class venta
     End Sub
 
     Friend WithEvents Button20 As Button
-    Friend WithEvents bt_imprimir As Button
     Friend WithEvents Button31 As Button
     Friend WithEvents Button30 As Button
     Friend WithEvents Button29 As Button
@@ -670,4 +669,5 @@ Partial Class venta
     Friend WithEvents DataGridViewTextBoxColumn20 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn21 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn22 As DataGridViewTextBoxColumn
+    Friend WithEvents Button1 As Button
 End Class
